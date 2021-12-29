@@ -1,0 +1,9 @@
+[submodule "station-entry-api"]
+	path = station-entry-api
+	url = https://github.com/Nyuczka/station-entry-api
+[submodule "charging-station-api"]
+	path = charging-station-api
+	url = https://github.com/Nyuczka/charging-station-api
+[submodule "data-generator"]
+	path = data-generator
+	url = https://github.com/Nyuczka/data-generator
