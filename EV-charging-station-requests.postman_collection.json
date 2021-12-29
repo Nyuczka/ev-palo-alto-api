@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "adc861f0-08e9-4723-a4f6-fbd5a4a31f5d",
+		"name": "EV charging station requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth - login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"user\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "events for station name with limit",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer + TOKEN",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/station?stationName=test_name&limit=test_limit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"station"
+					],
+					"query": [
+						{
+							"key": "stationName",
+							"value": "test_name"
+						},
+						{
+							"key": "limit",
+							"value": "test_limit"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "events for user and energy in range",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer + TOKEN",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/USER_ID?minEnergy=value&maxEnergy=value",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"USER_ID"
+					],
+					"query": [
+						{
+							"key": "minEnergy",
+							"value": "value"
+						},
+						{
+							"key": "maxEnergy",
+							"value": "value"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "average energy per user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer + TOKEN",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:500/api/avg/energy/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "500",
+					"path": [
+						"api",
+						"avg",
+						"energy",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "average energy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer + TOKEN",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/avg-energy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"avg-energy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users with max energy between specified days",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer + TOKEN",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/max-energy?startDate=START_DATE&endDate=END_DATE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"max-energy"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "START_DATE"
+						},
+						{
+							"key": "endDate",
+							"value": "END_DATE"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
